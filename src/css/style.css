@@ -1,17 +1,266 @@
-body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
-.w3-row-padding img {margin-bottom: 12px}
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Montserrat', sans-serif;
+}
+.w3-row-padding img {
+  margin-bottom: 12px;
+}
 .bgimg {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url('../images/MyImage1.jpg');
+  background-image: url('../images/BgAdded.png');
   min-height: 100%;
 }
 
-a{
-    text-decoration: none;
+a {
+  text-decoration: none;
 }
 
-img{
-  border-radius: 10px;
+p {
+  font-size: 16px;
+}
+
+/* Title */
+.title {
+  height: 50px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title-wrapper {
+  height: 100%;
+  animation: move 10s ease-in-out infinite alternate;
+}
+
+@keyframes move {
+  20% {
+    transform: translateY(-50px);
+  }
+  40% {
+    transform: translateY(-100px);
+  }
+  60% {
+    transform: translateY(-150px);
+  }
+  80% {
+    transform: translateY(-200px);
+  }
+  100% {
+    transform: translateY(-250px);
+  }
+}
+
+.item {
+  height: 50px;
+  font-size: 25px;
+  font-weight: bold;
+}
+/*End Title*/
+
+/*Card Flipping*/
+.a-r-qualification {
+  width: 100%;
+  display: flex;
+  margin: 10px 0;
+}
+
+.a-r-card {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  margin: 5px;
+  border-radius: 20px;
+}
+
+.card-flip {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+}
+
+.a-r-card:hover .card-flip {
+  transform: rotateY(180deg);
+}
+
+.flip-front,
+.flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 20px;
+}
+
+.flip-front {
+  background-color: #ffffff;
+  color: black;
+}
+
+.flip-back {
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.a-r-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.flip-topic {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.flip-sub-topic {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.flip-desc {
+  font-size: 10px;
+  font-weight: 600;
+}
+/*Card Flipping*/
+
+/* Begins skill bars */
+.a-r-skills {
+  padding: 5px 10px 5px 10px;
+}
+
+.container {
+  width: 100%;
+  background-color: #ddd;
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.skills {
+  text-align: right;
+  color: white;
+  border-radius: 25px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.37);
+}
+
+.front {
+  width: 95%;
+  background-color: #940d19;
+  animation: front 3s ease;
+}
+
+@keyframes front {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 95%;
+  }
+}
+
+.back {
+  width: 90%;
+  background-color: #2196f3;
+  animation: back 3s ease;
+}
+
+@keyframes back {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 90%;
+  }
+}
+
+.ps {
+  width: 70%;
+  background-color: #c99914;
+  animation: ps 3s ease;
+}
+
+@keyframes ps {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 70%;
+  }
+}
+/* End of skill bars css */
+
+/* Browser */
+.list {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.p {
+  width: 100%;
+  height: 40vh;
+  margin: 20px 10px;
+  border: 2px solid rgb(192, 192, 192);
+  border-radius: 10px 10px 0px 0px;
+  overflow: hidden;
+}
+
+.p-browser {
+  height: 20px;
+  background-color: rgb(192, 192, 192);
+  display: flex;
+  align-items: center;
+  position: sticky;
+  z-index: 2;
+}
+
+.p-circle {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin: 3px;
+  background-color: white;
+}
+
+.p-img {
+  width: 100% !important;
+  transition: all 10s ease;
+}
+
+.p:hover .p-img {
+  transform: translateY(-100%);
+}
+
+@media screen and (max-width: 480px) {
+  .a-r-qualification {
+    display: none;
+  }
+
+  .main-topic {
+    font-size: 55px;
+  }
 }
